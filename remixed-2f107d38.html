@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advocate Gajanan W Pimpale & Associates – Law Firm & Legal Services</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1a2b4a;--navy-deep:#111e33;--blue-mid:#2c4a7c;--accent:#c8922a;--accent-lt:#e8b44a;
+  --white:#ffffff;--off-white:#f7f8fc;--light-gray:#eef0f5;--mid-gray:#8a94a6;--text:#2d3748;
+  --text-light:#5a6478;--border:#dde2ec;--shadow:0 4px 24px rgba(26,43,74,.08);--shadow-lg:0 12px 48px rgba(26,43,74,.14);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.65;overflow-x:hidden;}
+.page{display:none;min-height:100vh;}.page.active{display:block;}
+header{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 16px rgba(26,43,74,.06);}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.logo{display:flex;align-items:center;gap:.85rem;cursor:pointer;}
+.logo-icon{width:42px;height:42px;background:var(--navy);border-radius:8px;display:grid;place-items:center;font-size:1.15rem;flex-shrink:0;}
+.logo-name{display:block;font-family:'DM Serif Display',serif;font-size:1rem;color:var(--navy);line-height:1.2;}
+.logo-sub{display:block;font-size:.68rem;color:var(--mid-gray);margin-top:1px;}
+nav{display:flex;align-items:center;gap:.15rem;}
+.nav-link{font-size:.83rem;font-weight:500;color:var(--text-light);padding:.5rem .85rem;border-radius:6px;cursor:pointer;border:none;background:transparent;transition:color .2s,background .2s;font-family:'DM Sans',sans-serif;}
+.nav-link:hover,.nav-link.active{color:var(--navy);background:var(--off-white);}
+.nav-cta{margin-left:.4rem;background:var(--navy)!important;color:var(--white)!important;padding:.52rem 1.2rem!important;border-radius:6px!important;}
+.nav-cta:hover{background:var(--blue-mid)!important;}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem;color:var(--navy);font-size:1.3rem;}
+.mobile-nav{display:none;flex-direction:column;gap:.25rem;padding:1rem 2rem;background:var(--white);border-bottom:1px solid var(--border);}
+.mobile-nav.open{display:flex;}
+.mobile-nav .nav-link{width:100%;text-align:left;padding:.65rem .9rem;}
+.hero{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,var(--blue-mid) 100%);padding:5.5rem 2rem 5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center;position:relative;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,146,42,.15);border:1px solid rgba(200,146,42,.3);color:var(--accent-lt);font-size:.72rem;font-weight:500;letter-spacing:.07em;padding:.38rem .9rem;border-radius:20px;margin-bottom:1.3rem;text-transform:uppercase;}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent-lt);display:inline-block;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.8vw,3.2rem);color:var(--white);line-height:1.15;font-weight:400;margin-bottom:1.2rem;}
+.hero h1 em{font-style:italic;color:var(--accent-lt);}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:.8rem;font-weight:300;}
+.hero-region{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:2rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;padding:.78rem 1.7rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;}
+.btn-white{background:var(--white);color:var(--navy);}.btn-white:hover{background:var(--off-white);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35);}.btn-outline:hover{background:rgba(255,255,255,.08);transform:translateY(-2px);}
+.btn-navy{background:var(--navy);color:var(--white);}.btn-navy:hover{background:var(--blue-mid);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.btn-accent{background:var(--accent);color:var(--white);}.btn-accent:hover{background:var(--accent-lt);color:var(--navy);transform:translateY(-2px);}
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:1.8rem;backdrop-filter:blur(8px);}
+.hero-card-title{font-size:.72rem;font-weight:600;letter-spacing:.12em;color:var(--accent-lt);text-transform:uppercase;margin-bottom:1.3rem;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+.stat-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:1.1rem;text-align:center;}
+.stat-val{font-family:'DM Serif Display',serif;font-size:1.75rem;color:var(--white);line-height:1;margin-bottom:.28rem;}
+.stat-label{font-size:.7rem;color:rgba(255,255,255,.5);}
+.hero-divider{height:1px;background:rgba(255,255,255,.1);margin:1.3rem 0;}
+.hero-empanelled{margin-top:1rem;background:rgba(200,146,42,.12);border:1px solid rgba(200,146,42,.25);border-radius:8px;padding:.9rem 1rem;}
+.hero-empanelled p{font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.5;}
+.section{padding:5rem 2rem;}.container{max-width:1280px;margin:0 auto;}
+.section-tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
+.section-tag::before{content:'— ';}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);color:var(--navy);line-height:1.2;font-weight:400;margin-bottom:1rem;}
+.section-desc{font-size:.98rem;color:var(--text-light);max-width:580px;line-height:1.75;}
+.services-strip{background:var(--off-white);padding:3rem 2rem;}
+.strip-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;}
+.strip-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1rem;text-align:center;cursor:pointer;transition:all .25s;}
+.strip-card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.strip-icon{font-size:1.5rem;margin-bottom:.6rem;}
+.strip-title{font-size:.78rem;font-weight:600;color:var(--navy);line-height:1.3;}
+.strip-card:hover .strip-title{color:var(--white);}
+.services-page-hero{background:linear-gradient(135deg,var(--navy-deep),var(--navy));padding:4rem 2rem 3rem;text-align:center;}
+.services-page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--white);font-weight:400;}
+.services-page-hero p{color:rgba(255,255,255,.6);font-size:1rem;margin-top:.8rem;max-width:600px;margin-left:auto;margin-right:auto;}
+.breadcrumb{font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1rem;}
+.breadcrumb span{color:var(--accent-lt);}
+.service-detail{padding:3rem 2rem;border-bottom:1px solid var(--border);}
+.service-detail:last-child{border-bottom:none;}
+.service-detail:nth-child(even){background:var(--off-white);}
+.service-detail-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;}
+.service-detail:nth-child(even) .service-detail-inner{direction:rtl;}
+.service-detail:nth-child(even) .service-detail-inner>*{direction:ltr;}
+.service-img-wrap{border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative;}
+.service-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,43,74,.5) 0%,transparent 50%);}
+.service-img-badge{position:absolute;bottom:1.2rem;left:1.2rem;background:var(--accent);color:var(--white);font-size:.72rem;font-weight:600;padding:.4rem .9rem;border-radius:20px;}
+.service-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.7);}
+.sip-icon{font-size:4rem;margin-bottom:1rem;opacity:.8;}
+.sip-label{font-size:.9rem;font-weight:500;letter-spacing:.05em;}
+.service-num-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
+.service-detail h2{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,2.5vw,2.1rem);color:var(--navy);font-weight:400;margin-bottom:.8rem;}
+.service-intro{font-size:.98rem;color:var(--text-light);line-height:1.75;margin-bottom:1.2rem;}
+.bullet-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem;}
+.bullet-list li{display:flex;gap:.65rem;align-items:center;font-size:.87rem;color:var(--text);line-height:1.5;}
+.bullet-list li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;background:rgba(200,146,42,.12);width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;}
+.service-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;}
+.tag{background:var(--light-gray);color:var(--text-light);font-size:.73rem;padding:.3rem .75rem;border-radius:20px;font-weight:500;}
+.tag.highlight{background:rgba(200,146,42,.12);color:var(--accent);}
+.about-hero{background:linear-gradient(135deg,var(--navy-deep),var(--navy));padding:4rem 2rem 3rem;text-align:center;}
+.about-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--white);font-weight:400;}
+.about-hero p{color:rgba(255,255,255,.6);font-size:1rem;margin-top:.8rem;}
+.advocate-section{padding:5rem 2rem;}
+.advocate-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:center;}
+.advocate-img-wrap{border-radius:14px;overflow:hidden;aspect-ratio:3/4;position:relative;background:linear-gradient(135deg,var(--navy) 0%,var(--blue-mid) 100%);display:flex;align-items:center;justify-content:center;}
+.advocate-avatar{font-size:6rem;text-align:center;}
+.advocate-title-card{position:absolute;bottom:0;left:0;right:0;background:var(--navy);padding:1.5rem;}
+.advocate-name{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--white);}
+.advocate-cred{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:.25rem;}
+.advocate-bio p{font-size:.98rem;color:var(--text);line-height:1.8;margin-bottom:1rem;}
+.advocate-highlights{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.5rem;}
+.highlight-box{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:1.2rem;transition:border-color .2s;}
+.highlight-box:hover{border-color:var(--navy);}
+.hb-val{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--navy);line-height:1;}
+.hb-label{font-size:.75rem;color:var(--text-light);margin-top:.3rem;}
+.districts-section{background:var(--off-white);padding:4rem 2rem;}
+.districts-section h2{text-align:center;margin-bottom:.7rem;}
+.districts-section .section-desc{text-align:center;margin:0 auto 2.5rem;}
+.districts-grid{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;}
+.district-pill{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:.45rem 1rem;font-size:.82rem;color:var(--text);font-weight:500;transition:all .2s;}
+.district-pill:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.district-pill.highlight-district{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.empanelment-section{padding:4rem 2rem;}
+.empanelment-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.bank-list{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
+.bank-item{display:flex;align-items:center;gap:.9rem;padding:1rem 1.2rem;background:var(--off-white);border:1px solid var(--border);border-radius:10px;font-size:.9rem;font-weight:500;color:var(--navy);transition:border-color .2s,box-shadow .2s;}
+.bank-item:hover{border-color:var(--navy);box-shadow:var(--shadow);}
+.bank-icon{font-size:1.3rem;}
+.empanelment-note{background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.25);border-radius:12px;padding:2rem;}
+.empanelment-note h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:.75rem;}
+.empanelment-note p{font-size:.9rem;color:var(--text-light);line-height:1.7;margin-bottom:.75rem;}
+.empanelment-note ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.empanelment-note ul li{display:flex;gap:.6rem;font-size:.88rem;color:var(--text);}
+.empanelment-note ul li::before{content:'→';color:var(--accent);font-weight:700;}
+.contact-hero{background:linear-gradient(135deg,var(--navy-deep),var(--navy));padding:4rem 2rem 3rem;text-align:center;}
+.contact-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--white);font-weight:400;}
+.contact-hero p{color:rgba(255,255,255,.6);margin-top:.8rem;}
+.contact-section{padding:4.5rem 2rem;}
+.contact-layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start;}
+.contact-info h3{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:.5rem;font-weight:400;}
+.contact-info p{font-size:.9rem;color:var(--text-light);line-height:1.7;margin-bottom:2rem;}
+.contact-cards{display:flex;flex-direction:column;gap:.75rem;}
+.contact-card{display:flex;gap:.9rem;align-items:flex-start;background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem;transition:border-color .2s;}
+.contact-card:hover{border-color:var(--navy);}
+.cc-icon{width:36px;height:36px;flex-shrink:0;background:var(--navy);border-radius:8px;display:grid;place-items:center;font-size:.9rem;}
+.cc-label{font-size:.67rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:.2rem;}
+.cc-val{font-size:.88rem;color:var(--text);line-height:1.5;}
+.form-wrap{background:var(--off-white);border:1px solid var(--border);border-radius:16px;padding:2.5rem;}
+.form-wrap h3{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.35rem;font-weight:400;}
+.form-subtitle{font-size:.85rem;color:var(--text-light);margin-bottom:2rem;}
+.form-grid{display:flex;flex-direction:column;gap:.95rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.95rem;}
+.form-group label{display:block;font-size:.76rem;font-weight:600;color:var(--text);margin-bottom:.35rem;letter-spacing:.02em;}
+input,textarea,select{width:100%;padding:.72rem 1rem;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--text);background:var(--white);outline:none;transition:border-color .2s,box-shadow .2s;}
+input:focus,textarea:focus,select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,43,74,.07);}
+input::placeholder,textarea::placeholder{color:var(--mid-gray);}
+textarea{resize:vertical;min-height:110px;}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a94a6' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .75rem center;padding-right:2.5rem;}
+.form-submit{background:var(--navy);color:var(--white);width:100%;padding:.9rem;font-size:.9rem;font-weight:600;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
+.form-submit:hover{background:var(--blue-mid);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.form-note{font-size:.75rem;color:var(--mid-gray);margin-top:.6rem;text-align:center;}
+.success-msg{display:none;background:rgba(30,110,69,.08);border:1px solid rgba(30,110,69,.25);border-radius:10px;padding:1.2rem;text-align:center;color:#1e6e45;font-weight:500;margin-top:1rem;}
+.success-msg.show{display:block;}
+.about-strip{padding:4.5rem 2rem;background:var(--off-white);}
+.about-strip-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-strip-visual{background:var(--navy);border-radius:16px;padding:2.5rem;color:var(--white);position:relative;overflow:hidden;}
+.about-strip-visual::before{content:'⚖';position:absolute;font-size:14rem;right:-1.5rem;top:-1.5rem;opacity:.04;line-height:1;}
+.asv-quote{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.15rem;line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:1.5rem;}
+.asv-name{font-size:.9rem;font-weight:600;color:var(--white);}
+.asv-cred{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.2rem;}
+.asv-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.asv-stat{border-top:1px solid rgba(255,255,255,.1);padding-top:1rem;}
+.asv-stat-val{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--accent-lt);}
+.asv-stat-label{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.15rem;}
+.why-features{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.5rem;}
+.why-feat{display:flex;gap:.9rem;align-items:flex-start;padding:1rem 1.1rem;border-radius:10px;border:1px solid var(--border);background:var(--white);transition:border-color .2s,box-shadow .2s;}
+.why-feat:hover{border-color:var(--navy);box-shadow:var(--shadow);}
+.wf-icon{width:36px;height:36px;flex-shrink:0;background:var(--light-gray);border-radius:8px;display:grid;place-items:center;font-size:.95rem;}
+.wf-title{font-size:.93rem;font-weight:600;color:var(--navy);margin-bottom:.2rem;}
+.wf-desc{font-size:.82rem;color:var(--text-light);line-height:1.55;}
+.process-section{background:var(--navy);padding:4.5rem 2rem;}
+.process-section h2{color:var(--white);}
+.process-section .section-tag{color:var(--accent-lt);}
+.process-section .section-desc{color:rgba(255,255,255,.5);}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);margin-top:2.5rem;border-radius:12px;overflow:hidden;}
+.process-step{background:rgba(255,255,255,.04);padding:1.8rem 1.4rem;transition:background .2s;}
+.process-step:hover{background:rgba(255,255,255,.08);}
+.ps-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:rgba(200,146,42,.3);line-height:1;margin-bottom:.8rem;}
+.process-step h3{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--white);margin-bottom:.5rem;font-weight:400;}
+.process-step p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;}
+footer{background:var(--navy-deep);padding:3rem 2rem 1.5rem;}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+.footer-brand .logo-name{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--white);display:block;margin-bottom:.3rem;}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.6;margin-top:.6rem;max-width:220px;}
+.footer-col h4{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-lt);margin-bottom:1rem;}
+.footer-col p{font-size:.83rem;color:rgba(255,255,255,.4);display:block;margin-bottom:.5rem;}
+.footer-col button{font-size:.83rem;color:rgba(255,255,255,.4);display:block;margin-bottom:.5rem;cursor:pointer;transition:color .2s;background:none;border:none;font-family:'DM Sans',sans-serif;text-align:left;padding:0;}
+.footer-col button:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.3);}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:.75rem;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.7);}
+.text-center{text-align:center;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.hero-badge{animation:fadeUp .5s ease both;}
+.hero h1{animation:fadeUp .55s .1s ease both;}
+.hero-desc,.hero-region{animation:fadeUp .55s .2s ease both;}
+.hero-actions{animation:fadeUp .55s .3s ease both;}
+.hero-card{animation:fadeUp .55s .15s ease both;}
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .service-detail-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .service-detail:nth-child(even) .service-detail-inner{direction:ltr;}
+  .about-strip-inner{grid-template-columns:1fr;gap:3rem;}
+  .empanelment-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .contact-layout{grid-template-columns:1fr;gap:3rem;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .advocate-grid{grid-template-columns:1fr;gap:3rem;}
+  .strip-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:768px){
+  nav{display:none;}.menu-toggle{display:block;}
+  .process-grid{grid-template-columns:1fr 1fr;}
+  .strip-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr;}
+}
+@media(max-width:540px){
+  .form-row{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr;}
+  .advocate-highlights{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="showPage('home')">
+      <div class="logo-icon">⚖</div>
+      <div>
+        <span class="logo-name">Adv. Gajanan W Pimpale & Associates</span>
+        <span class="logo-sub">Law Firm & Legal Services · Maharashtra & Goa</span>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-link active" onclick="showPage('home')">Home</button>
+      <button class="nav-link" onclick="showPage('services')">Services</button>
+      <button class="nav-link" onclick="showPage('about')">About Us</button>
+      <button class="nav-link nav-cta" onclick="showPage('contact')">Contact Us</button>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="nav-link" onclick="showPage('home');toggleMenu()">Home</button>
+    <button class="nav-link" onclick="showPage('services');toggleMenu()">Services</button>
+    <button class="nav-link" onclick="showPage('about');toggleMenu()">About Us</button>
+    <button class="nav-link" onclick="showPage('contact');toggleMenu()">Contact Us</button>
+  </div>
+</header>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="hero-badge-dot"></span> Serving Maharashtra & Goa Since 1995</div>
+        <h1>Trusted Legal<br>Counsel for <em>Every</em><br>Challenge</h1>
+        <p class="hero-desc">Advocate Gajanan W Pimpale & Associates delivers expert legal representation in DRT, SARFAESI Act, Property Law, Title Search, and Civil & Criminal matters.</p>
+        <div class="hero-region">📍 &nbsp;Offices in Thane West & Fort Mumbai &nbsp;|&nbsp; 30+ Districts Covered</div>
+        <div class="hero-actions">
+          <button class="btn btn-white" onclick="showPage('contact')">Book Free Consultation</button>
+          <button class="btn btn-outline" onclick="showPage('services')">Our Services</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">Our Track Record</div>
+        <div class="stat-grid">
+          <div class="stat-box"><div class="stat-val">₹3000M+</div><div class="stat-label">NPA Cases Resolved</div></div>
+          <div class="stat-box"><div class="stat-val">800+</div><div class="stat-label">SARFAESI Cases</div></div>
+          <div class="stat-box"><div class="stat-val">50+</div><div class="stat-label">Associates</div></div>
+          <div class="stat-box"><div class="stat-val">30+</div><div class="stat-label">Districts Covered</div></div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-empanelled">
+          <p>Empanelled Agency with Nationalized Banks for Section 14 SARFAESI — 13.2 Order & 13.4 Order Execution across Maharashtra & Goa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-strip">
+    <div class="strip-grid">
+      <div class="strip-card" onclick="showServiceDetail(0)"><div class="strip-icon">⚖️</div><div class="strip-title">DRT & Debt Recovery</div></div>
+      <div class="strip-card" onclick="showServiceDetail(1)"><div class="strip-icon">🏛️</div><div class="strip-title">Property Law</div></div>
+      <div class="strip-card" onclick="showServiceDetail(2)"><div class="strip-icon">📋</div><div class="strip-title">Title Search Report</div></div>
+      <div class="strip-card" onclick="showServiceDetail(3)"><div class="strip-icon">🏦</div><div class="strip-title">SARFAESI Act</div></div>
+      <div class="strip-card" onclick="showServiceDetail(4)"><div class="strip-icon">⚔️</div><div class="strip-title">Civil Law</div></div>
+      <div class="strip-card" onclick="showServiceDetail(5)"><div class="strip-icon">🔒</div><div class="strip-title">Criminal Law</div></div>
+    </div>
+  </section>
+
+  <section class="about-strip">
+    <div class="about-strip-inner">
+      <div class="about-strip-visual">
+        <div class="asv-quote">"Starting from humble beginnings, my journey has been defined by relentless dedication — ensuring every client receives the justice they deserve."</div>
+        <div class="asv-name">Advocate Gajanan W Pimpale</div>
+        <div class="asv-cred">B.Com. LLB | Bar Council of Maharashtra & Goa | Since 1995</div>
+        <div class="asv-stats">
+          <div class="asv-stat"><div class="asv-stat-val">30+</div><div class="asv-stat-label">Years of Practice</div></div>
+          <div class="asv-stat"><div class="asv-stat-val">₹3000M+</div><div class="asv-stat-label">Assets Recovered</div></div>
+          <div class="asv-stat"><div class="asv-stat-val">800+</div><div class="asv-stat-label">SARFAESI Cases</div></div>
+          <div class="asv-stat"><div class="asv-stat-val">30+</div><div class="asv-stat-label">Districts Covered</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">Why Choose Us</div>
+        <h2>Excellence &<br>Reliability in Legal Services</h2>
+        <p class="section-desc">Our firm has become synonymous with trusted legal services backed by decades of focused expertise.</p>
+        <div class="why-features">
+          <div class="why-feat"><div class="wf-icon">🎯</div><div><div class="wf-title">Specialized SARFAESI Expertise</div><div class="wf-desc">Empanelled with nationalized banks — we know banking law inside out, from Sec. 13 notices to Sec. 14 possession orders.</div></div></div>
+          <div class="why-feat"><div class="wf-icon">🗺️</div><div><div class="wf-title">Pan Maharashtra & Goa Coverage</div><div class="wf-desc">Associates in 30+ districts ensuring seamless legal services from Mumbai to Nagpur, Goa to Kolhapur.</div></div></div>
+          <div class="why-feat"><div class="wf-icon">🏦</div><div><div class="wf-title">Bank Possessed Property Services</div><div class="wf-desc">We assist banks in managing and executing possession of bank-held properties across Maharashtra & Goa.</div></div></div>
+          <div class="why-feat"><div class="wf-icon">⚡</div><div><div class="wf-title">Fast, Reliable Execution</div><div class="wf-desc">Prompt action on all legal orders with transparent reporting — no delays, no surprises.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section section">
+    <div class="container">
+      <div class="section-tag">How We Work</div>
+      <h2>Our 4-Step Process</h2>
+      <p class="section-desc">A structured, client-focused approach from first consultation to successful resolution.</p>
+      <div class="process-grid">
+        <div class="process-step"><div class="ps-num">01</div><h3>Free Consultation</h3><p>We understand your matter, review key documents, and assess the legal situation at no charge.</p></div>
+        <div class="process-step"><div class="ps-num">02</div><h3>Case Analysis</h3><p>Thorough research, review of legal precedents, and identification of the best strategy for your matter.</p></div>
+        <div class="process-step"><div class="ps-num">03</div><h3>Strategy & Plan</h3><p>A clear action plan with defined timelines, expected outcomes, and transparent fee structure.</p></div>
+        <div class="process-step"><div class="ps-num">04</div><h3>Execution</h3><p>Strong legal representation with regular updates and agile adaptation as proceedings evolve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--accent);padding:3.5rem 2rem;text-align:center;">
+    <h2 style="color:var(--white);font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:.7rem;">Ready to Resolve Your Legal Matter?</h2>
+    <p style="color:rgba(255,255,255,.8);font-size:.98rem;margin-bottom:1.8rem;">Contact us today for a free consultation. Serving all of Maharashtra & Goa.</p>
+    <button class="btn btn-white" onclick="showPage('contact')" style="font-size:1rem;padding:.9rem 2.2rem;">Get Free Consultation →</button>
+  </section>
+</div>
+
+<!-- SERVICES -->
+<div class="page" id="page-services">
+  <div class="services-page-hero">
+    <div class="breadcrumb">Home &nbsp;/&nbsp; <span>Services</span></div>
+    <h1>Our Legal Services</h1>
+    <p>Comprehensive legal expertise across 6 practice areas — serving Maharashtra & Goa</p>
+  </div>
+
+  <div class="service-detail" id="service-0">
+    <div class="service-detail-inner">
+      <div class="service-img-wrap" style="background:linear-gradient(135deg,#1a2b4a 0%,#2c4a7c 100%);">
+        <div class="service-img-placeholder"><div class="sip-icon">⚖️</div><div class="sip-label">Debt Recovery Tribunal</div></div>
+        <div class="service-img-overlay"></div><div class="service-img-badge">DRT Practice</div>
+      </div>
+      <div>
+        <div class="service-num-tag">— Service 01</div>
+        <h2>DRT — Debt Recovery Tribunal</h2>
+        <p class="service-intro">The Debt Recovery Tribunal (DRT) is a specialized court where banks and financial institutions file cases to recover loans from defaulting borrowers. We represent both banks and borrowers before DRTs and the Debt Recovery Appellate Tribunal (DRAT) across Maharashtra & Goa.</p>
+        <ul class="bullet-list">
+          <li>Filing and handling of Original Applications (OA) by banks against loan defaulters</li>
+          <li>Representation of borrowers and guarantors to defend against unfair recovery proceedings</li>
+          <li>Filing of appeals before DRAT against DRT orders</li>
+          <li>Obtaining stay orders to stop auction or possession during litigation</li>
+          <li>Handling Securitisation Applications (SA) under SARFAESI Act Section 17 at DRT</li>
+          <li>Recovery of dues on behalf of banks through Recovery Certificates (RC) execution</li>
+          <li>Handling Interim Applications for attachment, injunction, and appointment of receivers</li>
+          <li>Advising banks on pre-litigation strategy and NPA classification matters</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag highlight">Original Application (OA)</span><span class="tag highlight">DRAT Appeals</span>
+          <span class="tag">Sec. 17 Applications</span><span class="tag">Stay Orders</span>
+          <span class="tag">Recovery Certificate</span><span class="tag">Maharashtra & Goa</span>
+        </div>
+        <button class="btn btn-navy" onclick="showPage('contact')">Enquire About DRT →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-detail" id="service-1">
+    <div class="service-detail-inner">
+      <div class="service-img-wrap" style="background:linear-gradient(135deg,#1e4a2c 0%,#2d6e45 100%);">
+        <div class="service-img-placeholder"><div class="sip-icon">🏛️</div><div class="sip-label">Property Law</div></div>
+        <div class="service-img-overlay"></div><div class="service-img-badge">Property Practice</div>
+      </div>
+      <div>
+        <div class="service-num-tag">— Service 02</div>
+        <h2>Property Law</h2>
+        <p class="service-intro">Property disputes are among the most complex legal matters. Our team handles all types of property-related legal issues — from simple sale deed drafting to complex multi-party property disputes in courts across Maharashtra & Goa.</p>
+        <ul class="bullet-list">
+          <li>Drafting and review of Sale Deeds, Gift Deeds, and Lease Agreements</li>
+          <li>Handling partition suits for property division among family members or co-owners</li>
+          <li>Filing injunction suits to stop illegal construction or unauthorized possession</li>
+          <li>Resolving landlord-tenant disputes under the Maharashtra Rent Control Act</li>
+          <li>Legal support for property mutation and registration matters</li>
+          <li>Assistance in bank-possessed property management and handover process</li>
+          <li>Handling encroachment cases and illegal occupation of land</li>
+          <li>Advisory for NRI clients on property acquisition and maintenance in Maharashtra</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag highlight">Sale Deed Drafting</span><span class="tag highlight">Partition Suits</span>
+          <span class="tag">Landlord-Tenant</span><span class="tag">Bank Possessed Property</span>
+          <span class="tag">Injunctions</span><span class="tag">Maharashtra & Goa</span>
+        </div>
+        <button class="btn btn-navy" onclick="showPage('contact')">Enquire About Property Law →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-detail" id="service-2">
+    <div class="service-detail-inner">
+      <div class="service-img-wrap" style="background:linear-gradient(135deg,#4a3a1a 0%,#7c6030 100%);">
+        <div class="service-img-placeholder"><div class="sip-icon">📋</div><div class="sip-label">Title Search Report</div></div>
+        <div class="service-img-overlay"></div><div class="service-img-badge">Due Diligence</div>
+      </div>
+      <div>
+        <div class="service-num-tag">— Service 03</div>
+        <h2>Title Search Report</h2>
+        <p class="service-intro">Before buying property or approving a home loan, it is critical to verify the title of the property. A Title Search Report (TSR) is a legal document that confirms ownership, checks for encumbrances, disputes, and ensures the property is legally clear for sale or mortgage.</p>
+        <ul class="bullet-list">
+          <li>Ownership verification — tracing who owns the property and its complete history</li>
+          <li>Check for any existing loans, mortgages, or encumbrances on the property</li>
+          <li>Verification of court cases or litigation pending against the property</li>
+          <li>Review of government records — 7/12, Property Card, Index II, Revenue Records</li>
+          <li>Checking for unauthorized construction or violation of building permissions</li>
+          <li>Verification of chain of title going back 30 years as required by banks</li>
+          <li>Issuing a comprehensive TSR report for banks, buyers, and developers</li>
+          <li>Special TSR for SARFAESI auction properties and bank-held properties</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag highlight">For Home Buyers</span><span class="tag highlight">For Banks (Home Loans)</span>
+          <span class="tag">For Developers</span><span class="tag">SARFAESI Auction TSR</span>
+          <span class="tag">Revenue Records</span><span class="tag">Maharashtra & Goa</span>
+        </div>
+        <button class="btn btn-navy" onclick="showPage('contact')">Request Title Search →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-detail" id="service-3">
+    <div class="service-detail-inner">
+      <div class="service-img-wrap" style="background:linear-gradient(135deg,#1a3a4a 0%,#1e6e8a 100%);">
+        <div class="service-img-placeholder"><div class="sip-icon">🏦</div><div class="sip-label">SARFAESI Act</div></div>
+        <div class="service-img-overlay"></div><div class="service-img-badge">800+ Cases Handled</div>
+      </div>
+      <div>
+        <div class="service-num-tag">— Service 04</div>
+        <h2>SARFAESI Act Services</h2>
+        <p class="service-intro">The SARFAESI Act (Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002) allows banks to recover NPAs without going to court. We are empanelled by nationalized banks as an authorized agency for Section 14 proceedings.</p>
+        <div style="background:rgba(200,146,42,.08);border:1px solid rgba(200,146,42,.25);border-radius:10px;padding:1.1rem 1.3rem;margin-bottom:1.2rem;">
+          <span style="color:var(--accent);font-size:.85rem;font-weight:600;">⭐ Bank Empanelled Agency</span>
+          <p style="font-size:.85rem;color:var(--text);margin-top:.3rem;line-height:1.6;">We are empanelled with nationalized banks to execute Section 14 SARFAESI orders — including 13.2 (Demand Notice execution) and 13.4 (Physical Possession Order) across all of Maharashtra & Goa.</p>
+        </div>
+        <ul class="bullet-list">
+          <li>Issuing Section 13(2) Demand Notices on behalf of banks to loan defaulters</li>
+          <li>Executing Section 13(4) Symbolic and Physical Possession of secured assets</li>
+          <li>Filing applications before District Magistrate / Chief Metropolitan Magistrate under Section 14</li>
+          <li>Managing and executing bank-possessed properties across Maharashtra & Goa</li>
+          <li>Representing banks in Section 17 objections filed by borrowers at DRT</li>
+          <li>Handling property auction process — publication, bidding, sale certificate</li>
+          <li>Advising on SARFAESI vs DRT strategy for optimal NPA recovery</li>
+          <li>Post-possession property management and custody services</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag highlight">Sec. 13(2) Demand Notice</span><span class="tag highlight">Sec. 13(4) Possession</span>
+          <span class="tag highlight">Sec. 14 CMM/DM Order</span><span class="tag">Bank Empanelled</span>
+          <span class="tag">Property Auction</span><span class="tag">NPA Recovery</span>
+        </div>
+        <button class="btn btn-navy" onclick="showPage('contact')">Enquire About SARFAESI →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-detail" id="service-4">
+    <div class="service-detail-inner">
+      <div class="service-img-wrap" style="background:linear-gradient(135deg,#2a1a4a 0%,#4a2c7c 100%);">
+        <div class="service-img-placeholder"><div class="sip-icon">⚔️</div><div class="sip-label">Civil Law</div></div>
+        <div class="service-img-overlay"></div><div class="service-img-badge">Civil Practice</div>
+      </div>
+      <div>
+        <div class="service-num-tag">— Service 05</div>
+        <h2>Civil Law</h2>
+        <p class="service-intro">Civil law covers disputes between individuals, companies, or organizations. Unlike criminal law, the goal is not punishment but resolution and compensation. Our team handles a wide range of civil matters across District Courts and High Courts in Maharashtra & Goa.</p>
+        <ul class="bullet-list">
+          <li>Filing and defending money recovery suits for unpaid dues, loans, and cheque dishonour cases</li>
+          <li>Handling contract disputes — breach of contract, non-performance, and damages claims</li>
+          <li>Filing Specific Performance suits to enforce sale agreements and contracts</li>
+          <li>Obtaining injunctions and restraining orders — temporary, ad interim, and permanent</li>
+          <li>Handling succession and inheritance matters — wills, probate, and Letters of Administration</li>
+          <li>Family law disputes including matrimonial cases, maintenance, and custody</li>
+          <li>Resolving commercial disputes between business partners or companies</li>
+          <li>Filing Section 138 NI Act cases for cheque bounce (dishonour) matters</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag highlight">Money Recovery</span><span class="tag highlight">Sec. 138 Cheque Bounce</span>
+          <span class="tag">Contract Disputes</span><span class="tag">Specific Performance</span>
+          <span class="tag">Injunctions</span><span class="tag">Succession & Inheritance</span>
+        </div>
+        <button class="btn btn-navy" onclick="showPage('contact')">Enquire About Civil Law →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-detail" id="service-5">
+    <div class="service-detail-inner">
+      <div class="service-img-wrap" style="background:linear-gradient(135deg,#3a1a1a 0%,#6e2c2c 100%);">
+        <div class="service-img-placeholder"><div class="sip-icon">🔒</div><div class="sip-label">Criminal Law</div></div>
+        <div class="service-img-overlay"></div><div class="service-img-badge">Criminal Practice</div>
+      </div>
+      <div>
+        <div class="service-num-tag">— Service 06</div>
+        <h2>Criminal Law</h2>
+        <p class="service-intro">Criminal law matters require prompt, experienced legal representation. Whether you are a victim seeking justice or an accused seeking fair defence, our team provides strategic counsel in all criminal proceedings before Magistrate Courts, Sessions Courts, and High Courts.</p>
+        <ul class="bullet-list">
+          <li>Filing applications for Regular Bail and Anticipatory Bail in Sessions Court and High Court</li>
+          <li>Complete defence in criminal trials — from charge framing to final arguments</li>
+          <li>Handling economic offences including fraud, cheating, and misappropriation cases</li>
+          <li>Prosecuting and defending white-collar crime cases</li>
+          <li>Filing complaints under Section 138 NI Act for cheque bounce matters</li>
+          <li>Assisting banks in filing FIRs for wilful loan defaulters and fraud cases</li>
+          <li>Handling quashing petitions before the High Court to set aside FIRs</li>
+          <li>Representation in PMLA (Prevention of Money Laundering) matters</li>
+        </ul>
+        <div class="service-tags">
+          <span class="tag highlight">Bail Applications</span><span class="tag highlight">Economic Offences</span>
+          <span class="tag">White-Collar Crime</span><span class="tag">FIR & Quashing</span>
+          <span class="tag">PMLA Matters</span><span class="tag">Cheque Bounce (138)</span>
+        </div>
+        <button class="btn btn-navy" onclick="showPage('contact')">Enquire About Criminal Law →</button>
+      </div>
+    </div>
+  </div>
+
+  <section style="background:var(--navy);padding:3.5rem 2rem;text-align:center;">
+    <h2 style="color:var(--white);font-family:'DM Serif Display',serif;margin-bottom:.7rem;">Need Legal Assistance?</h2>
+    <p style="color:rgba(255,255,255,.6);margin-bottom:1.8rem;">Our team is available Mon–Sat, 10am–6pm. Contact us for a free first consultation.</p>
+    <button class="btn btn-accent" onclick="showPage('contact')">Contact Us Today →</button>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div class="breadcrumb">Home &nbsp;/&nbsp; <span>About Us</span></div>
+    <h1>About Our Firm</h1>
+    <p>30+ years of dedicated legal service across Maharashtra & Goa</p>
+  </div>
+
+  <section class="advocate-section">
+    <div class="advocate-grid">
+      <div class="advocate-img-wrap">
+        <div class="advocate-avatar">👨‍⚖️</div>
+        <div class="advocate-title-card">
+          <div class="advocate-name">Advocate Gajanan W Pimpale</div>
+          <div class="advocate-cred">B.Com. LLB | Enrolled: 1995 | Bar Council of Maharashtra & Goa</div>
+        </div>
+      </div>
+      <div class="advocate-bio">
+        <div class="section-tag">Founder & Principal Advocate</div>
+        <h2>Gajanan W Pimpale</h2>
+        <p>Advocate Gajanan W Pimpale is the driving force behind our firm, bringing decades of experience and expertise in asset recovery and legal enforcement. His journey is marked by relentless dedication and perseverance.</p>
+        <p>Starting from humble beginnings, Advocate Pimpale has navigated numerous challenges to build a distinguished career. With a B.Com. LLB degree and enrollment with the Bar Council of Maharashtra & Goa since 1995, his profound legal knowledge and strategic insights have led to the successful recovery of assets worth over ₹3000 Million.</p>
+        <p>Under his leadership, the firm has become synonymous with excellence and reliability in legal services — particularly in SARFAESI Act enforcement, DRT proceedings, and property law across Maharashtra and Goa.</p>
+        <div class="advocate-highlights">
+          <div class="highlight-box"><div class="hb-val">1995</div><div class="hb-label">Bar Council Enrollment Year</div></div>
+          <div class="highlight-box"><div class="hb-val">30+</div><div class="hb-label">Years of Legal Practice</div></div>
+          <div class="highlight-box"><div class="hb-val">₹3000M+</div><div class="hb-label">Assets Successfully Recovered</div></div>
+          <div class="highlight-box"><div class="hb-val">800+</div><div class="hb-label">SARFAESI Cases Handled</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="empanelment-section" style="background:var(--off-white);">
+    <div class="empanelment-grid container">
+      <div>
+        <div class="section-tag">Bank Empanelment</div>
+        <h2>Empanelled with<br>Nationalized Banks</h2>
+        <p class="section-desc">We are an authorized advocate agency empanelled with leading nationalized banks for SARFAESI Act Section 14 proceedings across Maharashtra & Goa.</p>
+        <div class="bank-list">
+          <div class="bank-item"><span class="bank-icon">🏦</span> State Bank of India</div>
+          <div class="bank-item"><span class="bank-icon">🏦</span> Bank of Baroda</div>
+          <div class="bank-item"><span class="bank-icon">🏦</span> Union Bank of India</div>
+          <div class="bank-item"><span class="bank-icon">🏦</span> Bank of Maharashtra</div>
+          <div class="bank-item"><span class="bank-icon">🏦</span> Canara Bank</div>
+          <div class="bank-item"><span class="bank-icon">🏦</span> Punjab National Bank</div>
+          <div class="bank-item"><span class="bank-icon">🏦</span> Central Bank of India & Other Nationalized Banks</div>
+        </div>
+      </div>
+      <div class="empanelment-note">
+        <h3>What This Means for Banks</h3>
+        <p>As an empanelled agency, we provide specialized legal services exclusively authorized by the bank — ensuring compliance, accountability, and speed of execution.</p>
+        <p>Our empanelment covers:</p>
+        <ul>
+          <li>Section 13(2) — Issuing and serving Demand Notices to defaulting borrowers</li>
+          <li>Section 13(4) — Execution of Symbolic and Physical Possession of secured assets</li>
+          <li>Section 14 — Filing and obtaining CMM/DM orders for possession assistance</li>
+          <li>13.4 Order Execution — Physical takeover of bank-possessed properties</li>
+          <li>Bank Possessed Property — Management and custody services across Maharashtra & Goa</li>
+          <li>Property Auction — Complete support for auction process and sale certificate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="districts-section">
+    <div class="container">
+      <div class="section-tag text-center">Service Coverage</div>
+      <h2>Associates Across 30+ Districts</h2>
+      <p class="section-desc">We have active associate advocates across Maharashtra & Goa — ensuring local expertise and timely legal action wherever your matter is located.</p>
+      <div class="districts-grid">
+        <div class="district-pill highlight-district">Mumbai</div><div class="district-pill highlight-district">Thane</div>
+        <div class="district-pill highlight-district">Pune</div><div class="district-pill highlight-district">Nagpur</div>
+        <div class="district-pill">Aurangabad</div><div class="district-pill">Nashik</div>
+        <div class="district-pill">Jalgaon</div><div class="district-pill">Akola</div>
+        <div class="district-pill">Amravati</div><div class="district-pill">Yavatmal</div>
+        <div class="district-pill">Kolhapur</div><div class="district-pill">Satara</div>
+        <div class="district-pill">Sangli</div><div class="district-pill">Ratnagiri</div>
+        <div class="district-pill">Raigad</div><div class="district-pill highlight-district">Goa</div>
+        <div class="district-pill">Jalna</div><div class="district-pill">Parbhani</div>
+        <div class="district-pill">Beed</div><div class="district-pill">Latur</div>
+        <div class="district-pill">Nanded</div><div class="district-pill">Solapur</div>
+        <div class="district-pill">Osmanabad</div><div class="district-pill">Hingoli</div>
+        <div class="district-pill">Wardha</div><div class="district-pill">Washim</div>
+        <div class="district-pill">Buldhana</div><div class="district-pill">Gondia</div>
+        <div class="district-pill">Chandrapur</div><div class="district-pill">Gadchiroli</div>
+        <div class="district-pill">Sindhudurg</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--navy);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;">
+        <div style="padding:2rem;border:1px solid rgba(255,255,255,.1);border-radius:12px;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">⚖️</div>
+          <h3 style="font-family:'DM Serif Display',serif;color:var(--white);margin-bottom:.6rem;font-weight:400;">Integrity</h3>
+          <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.65;">We uphold the highest ethical standards in every legal matter, ensuring honest counsel and transparent processes.</p>
+        </div>
+        <div style="padding:2rem;border:1px solid rgba(255,255,255,.1);border-radius:12px;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">🎯</div>
+          <h3 style="font-family:'DM Serif Display',serif;color:var(--white);margin-bottom:.6rem;font-weight:400;">Excellence</h3>
+          <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.65;">Every case receives our complete dedication. We strive for the best possible outcome for each client we serve.</p>
+        </div>
+        <div style="padding:2rem;border:1px solid rgba(255,255,255,.1);border-radius:12px;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">🤝</div>
+          <h3 style="font-family:'DM Serif Display',serif;color:var(--white);margin-bottom:.6rem;font-weight:400;">Reliability</h3>
+          <p style="font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.65;">Banks and clients trust us to deliver. We are known for prompt action, clear communication, and dependable results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <div class="contact-hero">
+    <div class="breadcrumb">Home &nbsp;/&nbsp; <span>Contact Us</span></div>
+    <h1>Contact Us</h1>
+    <p>Reach out for a free, confidential consultation. We respond within 24 hours.</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>Whether you have a question about our services or want to discuss your legal matter, we're here to help. Our team responds promptly to all enquiries.</p>
+        <div class="contact-cards">
+          <div class="contact-card"><div class="cc-icon">📍</div><div><div class="cc-label">Head Office</div><div class="cc-val">FB-146, First Floor, Highstreet Mall,<br>Kapurbawdi Junction, Thane West – 400607<br>Maharashtra</div></div></div>
+          <div class="contact-card"><div class="cc-icon">🏢</div><div><div class="cc-label">Corporate Office</div><div class="cc-val">Office No. 1, Ground Floor, Ratna Vijay Building, Plot No. 249, Fort, Mumbai, Maharashtra 400001</div></div></div>
+          <div class="contact-card"><div class="cc-icon">📞</div><div><div class="cc-label">Phone / WhatsApp</div><div class="cc-val"><a href="tel:+919982323064" style="color:var(--navy);text-decoration:none;font-weight:500;">+91 99823 23064</a></div></div></div>
+          <div class="contact-card"><div class="cc-icon">✉️</div><div><div class="cc-label">Email</div><div class="cc-val">
+            <a href="mailto:advocate.pimpale@gmail.com" style="color:var(--navy);text-decoration:none;display:block;">advocate.pimpale@gmail.com</a>
+            <a href="mailto:thane.advocatepimpale@gmail.com" style="color:var(--navy);text-decoration:none;display:block;margin-top:.2rem;">thane.advocatepimpale@gmail.com</a>
+          </div></div></div>
+          <div class="contact-card"><div class="cc-icon">🕐</div><div><div class="cc-label">Office Hours</div><div class="cc-val">Monday – Saturday: 10:00 AM – 6:00 PM</div></div></div>
+          <div class="contact-card"><div class="cc-icon">🗺️</div><div><div class="cc-label">Service Area</div><div class="cc-val">All of Maharashtra & Goa — 30+ Districts</div></div></div>
+        </div>
+      </div>
+
+      <div class="form-wrap">
+        <h3>Send Us an Enquiry</h3>
+        <div class="form-subtitle">Fill in your details and we'll reach out via WhatsApp within one business day.</div>
+        <form class="form-grid" id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" name="name" placeholder="Your full name" required></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com"></div>
+          <div class="form-row">
+            <div class="form-group"><label>City / District</label><input type="text" name="city" placeholder="Your city or district"></div>
+            <div class="form-group"><label>Service Required *</label>
+              <select name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>DRT – Debt Recovery Tribunal</option>
+                <option>Property Law</option>
+                <option>Title Search Report</option>
+                <option>SARFAESI Act (Sec. 13/14)</option>
+                <option>Bank Possessed Property</option>
+                <option>Civil Law</option>
+                <option>Criminal Law</option>
+                <option>Other / General Enquiry</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Are you a Bank / Institution or Individual?</label>
+            <select name="client_type">
+              <option value="" disabled selected>Select client type</option>
+              <option>Bank / Financial Institution</option>
+              <option>Individual / Personal Matter</option>
+              <option>Corporate / Business</option>
+              <option>Real Estate / Developer</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Brief Description of Your Matter</label>
+            <textarea name="message" placeholder="Please briefly describe your legal matter so we can prepare for our discussion…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send via WhatsApp →</button>
+          <div class="form-note">🔒 Your information is kept strictly confidential</div>
+        </form>
+        <div class="success-msg" id="successMsg">✅ WhatsApp opened with your enquiry! We will respond shortly.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0;background:var(--off-white);">
+    <div style="max-width:1280px;margin:0 auto;padding:3rem 2rem;">
+      <div class="section-tag">Our Offices</div>
+      <h2 style="margin-bottom:2rem;">Visit Our Offices</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        <div style="background:var(--navy);border-radius:12px;padding:2rem;color:var(--white);">
+          <div style="font-size:1.5rem;margin-bottom:.8rem;">📍</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:.6rem;font-weight:400;">Head Office — Thane West</h3>
+          <p style="font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.65;">FB-146, First Floor, Highstreet Mall,<br>Kapurbawdi Junction,<br>Thane West – 400607, Maharashtra</p>
+          <a href="https://maps.google.com/?q=Highstreet+Mall+Kapurbawdi+Thane" target="_blank" style="display:inline-block;margin-top:1rem;font-size:.8rem;color:var(--accent-lt);text-decoration:none;border:1px solid rgba(200,146,42,.3);padding:.4rem .9rem;border-radius:6px;">View on Google Maps →</a>
+        </div>
+        <div style="background:var(--blue-mid);border-radius:12px;padding:2rem;color:var(--white);">
+          <div style="font-size:1.5rem;margin-bottom:.8rem;">🏢</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:.6rem;font-weight:400;">Corporate Office — Fort, Mumbai</h3>
+          <p style="font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.65;">Office No. 1, Ground Floor, Ratna Vijay Building, Plot No. 249, Fort, Mumbai, Maharashtra 400001</p>
+          <a href="https://www.google.com/maps/place/AGWPA+Law+Firm/@18.9354321,72.8347235,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7d1584215060f:0x73db1685baed4f25!8m2!3d18.9354321!4d72.8347235!16s%2Fg%2F11yzkz54qz?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="display:inline-block;margin-top:1rem;font-size:.8rem;color:var(--accent-lt);text-decoration:none;border:1px solid rgba(200,146,42,.3);padding:.4rem .9rem;border-radius:6px;">View on Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-name">Adv. Gajanan W Pimpale & Associates</span>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.3rem;">Law Firm & Legal Services</div>
+        <p>Serving Maharashtra & Goa since 1995. Empanelled with nationalized banks for SARFAESI Act proceedings.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <button onclick="showServiceDetail(0)">DRT – Debt Recovery</button>
+        <button onclick="showServiceDetail(1)">Property Law</button>
+        <button onclick="showServiceDetail(2)">Title Search Report</button>
+        <button onclick="showServiceDetail(3)">SARFAESI Act</button>
+        <button onclick="showServiceDetail(4)">Civil Law</button>
+        <button onclick="showServiceDetail(5)">Criminal Law</button>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('about')">About Us</button>
+        <button onclick="showPage('services')">All Services</button>
+        <button onclick="showPage('contact')">Contact Us</button>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📞 +91 99823 23064</p>
+        <p>✉ advocate.pimpale@gmail.com</p>
+        <p>📍 Thane West & Fort Mumbai</p>
+        <p>🕐 Mon–Sat: 10AM–6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Advocate Gajanan W Pimpale & Associates. All rights reserved. | Maharashtra & Goa</div>
+      <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Disclaimer</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(b => {
+    if(b.textContent.toLowerCase().includes(page) || (page==='home' && b.textContent.toLowerCase().includes('home')))
+      b.classList.add('active');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+  triggerAnims();
+}
+
+function showServiceDetail(index) {
+  showPage('services');
+  setTimeout(() => {
+    const el = document.getElementById('service-' + index);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 100);
+}
+
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const f = e.target;
+  const name    = f.name.value.trim();
+  const phone   = f.phone.value.trim();
+  const email   = f.email.value.trim();
+  const city    = f.city.value.trim();
+  const service = f.service.value;
+  const type    = f.client_type.value;
+  const msg     = f.message.value.trim();
+
+  const text =
+`*New Legal Enquiry — Website*
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email || 'Not provided'}
+*City/District:* ${city || 'Not provided'}
+*Service Required:* ${service}
+*Client Type:* ${type || 'Not specified'}
+*Message:* ${msg || 'No message provided'}`;
+
+  window.open(`https://wa.me/919982323064?text=${encodeURIComponent(text)}`, '_blank');
+  document.getElementById('successMsg').classList.add('show');
+  setTimeout(() => {
+    document.getElementById('successMsg').classList.remove('show');
+    f.reset();
+  }, 5000);
+}
+
+function triggerAnims() {
+  setTimeout(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+      });
+    }, {threshold:0.06});
+    document.querySelectorAll('.service-detail,.contact-card,.bank-item,.district-pill,.why-feat,.highlight-box,.strip-card,.process-step').forEach(el => {
+      el.style.opacity='0'; el.style.transform='translateY(16px)'; el.style.transition='opacity .4s ease,transform .4s ease';
+      io.observe(el);
+    });
+  }, 50);
+}
+triggerAnims();
+</script>
+</body>
+</html>
